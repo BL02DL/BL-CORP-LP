@@ -152,7 +152,7 @@ namespace Content.IntegrationTests.Tests
                 var memoryUsed = GC.GetTotalMemory(forceFullCollection: false);
 
                 // debug logging but tbh just use debugger
-                await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDeleteAllEntitiesOnDifferentMaps] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
+                // await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDeleteAllEntitiesOnDifferentMaps] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
 
                 if (memoryUsed < memoryLimitBytes)
                     continue;
@@ -317,7 +317,7 @@ namespace Content.IntegrationTests.Tests
                 var memoryUsed = GC.GetTotalMemory(forceFullCollection: false);
 
                 // debug logging but tbh just use debugger
-                await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDirtyAllEntities] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
+                // await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDirtyAllEntities] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
 
                 if (memoryUsed < memoryLimitBytes)
                     continue;
