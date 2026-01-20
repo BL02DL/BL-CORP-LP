@@ -141,7 +141,7 @@ namespace Content.IntegrationTests.Tests
             // i mean yeah you could run the test in batches of entities but its not really a stress test then is it.
 
             const int maxTicks = 15; // (default wizden)
-            const long memoryLimitBytes = 13L * 1024 * 1024 * 1024; // 13 GB, depends on how close you wanna fly to the sun.
+            const long memoryLimitBytes = 10L * 1024 * 1024 * 1024; // 13 GB, depends on how close you wanna fly to the sun.
 
             var warninglog = true; // if we stop caring about this test turn this off.
 
@@ -152,7 +152,7 @@ namespace Content.IntegrationTests.Tests
                 var memoryUsed = GC.GetTotalMemory(forceFullCollection: false);
 
                 // debug logging but tbh just use debugger
-                // await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDeleteAllEntitiesOnDifferentMaps] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
+                await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDeleteAllEntitiesOnDifferentMaps] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
 
                 if (memoryUsed < memoryLimitBytes)
                     continue;
@@ -306,7 +306,7 @@ namespace Content.IntegrationTests.Tests
             // i mean yeah you could run the test in batches of entities but its not really a stress test then is it.
 
             const int maxTicks = 15; // (default wizden)
-            const long memoryLimitBytes = 13L * 1024 * 1024 * 1024; // 13 GB
+            const long memoryLimitBytes = 10L * 1024 * 1024 * 1024; // 13 GB
 
             var warninglog = true; // if we stop caring about this test turn this off.
 
@@ -317,7 +317,7 @@ namespace Content.IntegrationTests.Tests
                 var memoryUsed = GC.GetTotalMemory(forceFullCollection: false);
 
                 // debug logging but tbh just use debugger
-                // await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDirtyAllEntities] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
+                await TestContext.Progress.WriteLineAsync($"[EntityTest SpawnAndDirtyAllEntities] Memory usage = {memoryUsed / (1024 * 1024 * 1024.0):F2} GB at tick {tick + 1}");
 
                 if (memoryUsed < memoryLimitBytes)
                     continue;
